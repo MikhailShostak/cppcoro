@@ -1591,12 +1591,12 @@ Example:
 #include <cppcoro/io_service.hpp>
 #include <cppcoro/read_only_file.hpp>
 
-#include <experimental/filesystem>
+#include <filesystem>
 #include <memory>
 #include <algorithm>
 #include <iostream>
 
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 cppcoro::task<std::uint64_t> count_lines(cppcoro::io_service& ioService, fs::path path)
 {
@@ -1774,7 +1774,7 @@ namespace cppcoro
     [[nodiscard]]
     static read_only_file open(
       io_service& ioService,
-      const std::experimental::filesystem::path& path,
+      const std::filesystem::path& path,
       file_share_mode shareMode = file_share_mode::read,
       file_buffering_mode bufferingMode = file_buffering_mode::default_);
 
@@ -1787,7 +1787,7 @@ namespace cppcoro
     [[nodiscard]]
     static write_only_file open(
       io_service& ioService,
-      const std::experimental::filesystem::path& path,
+      const std::filesystem::path& path,
       file_open_mode openMode = file_open_mode::create_or_open,
       file_share_mode shareMode = file_share_mode::none,
       file_buffering_mode bufferingMode = file_buffering_mode::default_);
@@ -1801,7 +1801,7 @@ namespace cppcoro
     [[nodiscard]]
     static read_write_file open(
       io_service& ioService,
-      const std::experimental::filesystem::path& path,
+      const std::filesystem::path& path,
       file_open_mode openMode = file_open_mode::create_or_open,
       file_share_mode shareMode = file_share_mode::none,
       file_buffering_mode bufferingMode = file_buffering_mode::default_);
